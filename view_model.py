@@ -8,5 +8,5 @@ class ViewModel:
     def insert(self, pen):
         self.db.insert(pen)
 
-    def get_all(self):
-        return self.db.get_all()
+    def get_all_pens(self):
+        return self.db.get_all_pens()
