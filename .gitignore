@@ -1,2 +1,4 @@
 __pycache__
 *.pyc
+farm_pens.db
+test_farm_pens.db
