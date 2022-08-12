@@ -11,7 +11,7 @@ class View:
     def get_new_pens(self):
 
         header('Welcome to the RuFas-beta model, John!\nAdd information about a new pen')
-        print('For this first pen:\n')
+        
         while True:
             pen = self.get_new_pen_data()
             if not pen:
@@ -19,7 +19,7 @@ class View:
     
     def get_new_pen_data(self):
 
-        print('For the next pen:\n')
+        print('*** For this pen: ***\n')
         breed = input('Enter the name of the breed of cow or press "enter" to quit: ')
         if not breed:
             return
@@ -38,5 +38,8 @@ class View:
             print(str(e))
 
 
+    def run_time_series(self):
+
+        
 
     

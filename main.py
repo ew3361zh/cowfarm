@@ -44,6 +44,13 @@ def main():
 
     farm_view.get_new_pens()
 
+    
+
+    print('\nWe hope this information was helpful to you!\n'
+    'Feedback is encouraged as we continue to refine our model.\n' 
+    'Please email rufas_dev_team@cornell.edu with your comments.\n' 
+    'Thank you for using the RuFas-beta program!\n')
+
 
 if __name__ == '__main__':
     main()
