@@ -7,12 +7,11 @@ from view.view_util import input_positive_float
 
 db = db_path
 
-class SQLFarmDB()
+class SQLFarmDB():
 
     def __init__(self):
         with sqlite3.connect(db) as conn:
             conn.execute("""CREATE TABLE IF NOT EXISTS pens (
-                id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
                 breed TEXT NOT NULL,
                 number_of_cows INTEGER NOT NULL,
                 feed_type TEXT,
@@ -30,7 +29,7 @@ class SQLFarmDB()
             with sqlite3.connect(db) as conn:
                 conn.execute('INSERT INTO pens VALUES(?, ?, ?, ?, ?)',
                             (pen.breed,
-                            pen.number,
+                            pen.number_of_cows,
                             pen.feed_type,
                             pen.amount_of_feed_per_cow,
                             pen.milk_yield))
