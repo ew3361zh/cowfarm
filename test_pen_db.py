@@ -26,22 +26,26 @@ class TestPenDB(TestCase):
                 number_of_cows INTEGER NOT NULL,
                 feed_type TEXT,
                 amount_of_feed_per_cow INTEGER NOT NULL,
-                milk_yield INTEGER NOT NULL)"""
+                feed_cost_per_pound INTEGER NOT NULL,
+                q1_milk_yield INTEGER NOT NULL,
+                q2_milk_yield INTEGER NOT NULL,
+                q3_milk_yield INTEGER NOT NULL,
+                q4_milk_yield INTEGER NOT NULL)"""
                 )
         conn.close()
 
         self.db = farm_database.SQLFarmDB()
     
     def test_add_new_pen(self):
-        p1 = Pen('Holstein', 10, 'corn', 8, 3)
+        p1 = Pen('Holstein', 10, 'corn', 8, 3, 250, 400, 500, 325)
         self.db.insert(p1)
-        expected = ('Holstein', 10, 'corn', 8, 3)
+        expected = ('Holstein', 10, 'corn', 8, 3, 250, 400, 500, 325)
         row = 0
         self.compare_db_to_expected(expected, row)
 
-        p2 = Pen('Simmental', 5, 'grain', 6, 2)
+        p2 = Pen('Simmental', 5, 'grain', 6, 2, 250, 400, 500, 325)
         self.db.insert(p2)
-        expected = ('Simmental', 5, 'grain', 6, 2)
+        expected = ('Simmental', 5, 'grain', 6, 2, 250, 400, 500, 325)
         row = 1 
         self.compare_db_to_expected(expected, row)
 

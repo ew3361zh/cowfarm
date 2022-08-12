@@ -16,7 +16,11 @@ class SQLFarmDB():
                 number_of_cows INTEGER NOT NULL,
                 feed_type TEXT,
                 amount_of_feed_per_cow INTEGER NOT NULL,
-                milk_yield INTEGER NOT NULL)"""
+                feed_cost_per_pound INTEGER NOT NULL,
+                q1_milk_yield INTEGER NOT NULL,
+                q2_milk_yield INTEGER NOT NULL,
+                q3_milk_yield INTEGER NOT NULL,
+                q4_milk_yield INTEGER NOT NULL)"""
                 )
         
         conn.close()
@@ -27,12 +31,16 @@ class SQLFarmDB():
 
         else:
             with sqlite3.connect(db) as conn:
-                conn.execute('INSERT INTO pens VALUES(?, ?, ?, ?, ?)',
+                conn.execute('INSERT INTO pens VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)',
                             (pen.breed,
                             pen.number_of_cows,
                             pen.feed_type,
                             pen.amount_of_feed_per_cow,
-                            pen.milk_yield))
+                            pen.feed_cost_per_pound,
+                            pen.q1_milk_yield,
+                            pen.q2_milk_yield,
+                            pen.q3_milk_yield,
+                            pen.q4_milk_yield))
             conn.close()
 
     def get_all_pens(self):
