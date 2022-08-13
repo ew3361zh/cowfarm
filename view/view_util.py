@@ -1,21 +1,14 @@
-"""
-input and validation utilities for the view module
-"""
-
+"""input and validation utilities for the view module"""
 
 def header(text):
-    """
-    style function to make command-line app more engaging and distinct
-    """
+    """style function to make command-line app more engaging and distinct"""
     stars = len(text) * '*'
     print(f'\n{stars}\n{text}\n{stars}\n')
     print()
 
 
 def input_positive_float(question):
-    """
-    input validation for positive float
-    """
+    """input validation for positive float"""
     while True:
         try:
             number = float(input(question))
@@ -28,9 +21,7 @@ def input_positive_float(question):
 
 
 def calculate_annual_cost(number_of_cows, amount_of_feed_per_cow, feed_cost_per_pound):
-    """
-    calculate cost of feed consumed for 1 pen
-    """
+    """calculate cost of feed consumed for 1 pen over 1 year"""
     return number_of_cows * amount_of_feed_per_cow * feed_cost_per_pound * 365
 
 
