@@ -7,7 +7,7 @@ def header(text):
     print()
 
 
-def input_positive_float(question):
+def input_positive_float(question) -> float:
     """input validation for positive float"""
     while True:
         try:
@@ -20,12 +20,12 @@ def input_positive_float(question):
             print('Enter a number.')
 
 
-def calculate_annual_cost(number_of_cows, amount_of_feed_per_cow, feed_cost_per_pound):
+def calculate_annual_cost(number_of_cows, amount_of_feed_per_cow, feed_cost_per_pound) -> float:
     """calculate cost of feed consumed for 1 pen over 1 year"""
     return number_of_cows * amount_of_feed_per_cow * feed_cost_per_pound * 365
 
 
-def calculate_annual_ghg(q1, q2, q3, q4):
+def calculate_annual_ghg(q1, q2, q3, q4) -> float:
     """
     calculate milk yield CO2 generation based off:
     - 1 liter of milk produces 1.39 kg of CO2 equivalents to the atmosphere.
