@@ -1,4 +1,4 @@
-# model class to communicate between view and db
+"""model class to communicate between view and database"""
 
 class ViewModel:
 

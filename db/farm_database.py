@@ -25,11 +25,13 @@ class SQLFarmDB():
         
         conn.close()
     
+
     def insert(self, pen):
+        """insert one pen object into the database"""
         if pen is None:
             raise FarmError('No pen data available to save into database')
 
-        else:
+        try:
             with sqlite3.connect(db) as conn:
                 conn.execute('INSERT INTO pens VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)',
                             (pen.breed,
@@ -42,10 +44,16 @@ class SQLFarmDB():
                             pen.q3_milk_yield,
                             pen.q4_milk_yield))
             conn.close()
+        except sqlite3.IntegrityError as ie:
+            raise FarmError('Error inserting data because ' + str(ie))
+
 
     def get_all_pens(self):
+        """queries database to fetch all records"""
         conn = sqlite3.connect(db)
         farm_cursor = conn.execute('SELECT * FROM pens')
         pens = [ Pen(*row) for row in farm_cursor.fetchall() ]
         conn.close()
         return pens
+
+        

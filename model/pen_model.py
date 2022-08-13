@@ -1,4 +1,5 @@
 class Pen():
+    """Main data object containing all user-input info on a single pen"""
     def __init__(self, 
                 breed, 
                 number_of_cows, 
@@ -9,7 +10,7 @@ class Pen():
                 q2_milk_yield,
                 q3_milk_yield,
                 q4_milk_yield):
-        self.breed = breed  # if breed feed/milk yield is more standard could create sub class objects
+        self.breed = breed 
         self.number_of_cows = number_of_cows
         self.feed_type = feed_type
         self.amount_of_feed_per_cow = amount_of_feed_per_cow
@@ -21,6 +22,5 @@ class Pen():
 
     def __str__(self):
         return f'This pen contains {self.number_of_cows} {self.breed}s that consume {self.feed_type}'
-        
         
         

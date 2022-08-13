@@ -86,6 +86,11 @@ class View:
                 print(f'while generating {round(annual_ghg, 2)} kg of CO2 each year\n')
                 pen_count += 1
 
+            print('We hope this information was helpful to you!\n'
+                'Feedback is encouraged as we continue to refine our model.\n' 
+                'Please email rufas_dev_team@cornell.edu with your comments.\n' 
+                'Thank you for using the Dairy Farm GHG program!\n')
+                
         except FarmError as e:
             print(str(e))
         
