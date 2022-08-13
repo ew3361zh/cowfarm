@@ -14,14 +14,6 @@ make a time series?
 
 Greenhouse gas emissions: Overall, how much greenhouse gases does this scenario generate?
 
-Estimates from online searches: 
-1 dairy cow produces avg of 7.5 gallons milk/day 
-https://www.ciwf.com/farmed-animals/cows/dairy-cows/#:~:text=Milk%20production%20per%20cow%20has,gallon%20of%20milk%20per%20day
-1 liter of milk produces 1.39 kg of CO2 equivalents to the atmosphere
-https://blogs.nicholas.duke.edu/citizenscientist/how-green-is-your-milk/
-1 liter = 0.264172 gallons
-7.5 gallons of milk produces ~2.7539931 kg of CO2 per day
-
 Cost estimation: Based on the type and amount of the consumed feeds, how much does 
 it cost John to implement this scenario in his farm?
 """
@@ -44,12 +36,14 @@ def main():
 
     farm_view.get_new_pens()
 
-    
+    farm_view.run_time_series()
 
-    print('\nWe hope this information was helpful to you!\n'
+    farm_view.calculate_cost_and_ghg()    
+
+    print('We hope this information was helpful to you!\n'
     'Feedback is encouraged as we continue to refine our model.\n' 
     'Please email rufas_dev_team@cornell.edu with your comments.\n' 
-    'Thank you for using the RuFas-beta program!\n')
+    'Thank you for using the Dairy Farm GHG program!\n')
 
 
 if __name__ == '__main__':
