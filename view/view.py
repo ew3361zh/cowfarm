@@ -17,8 +17,10 @@ class View:
 
     def get_new_pens(self):
         """welcome message and calling to get new pen input data from user"""
-        header('Welcome to the Dairy Farm GHG model, John!\nAdd information about a new pen')
+        header('Welcome to the Dairy Farm GHG model, John!\n')
         
+        print('You can start by adding information about a new pen\n')
+
         while True:
             pen = self.get_new_pen_data()
             if not pen:
@@ -86,10 +88,8 @@ class View:
                 print(f'while generating {round(annual_ghg, 2)} kg of CO2 each year\n')
                 pen_count += 1
 
-            print('We hope this information was helpful to you!\n'
-                'Feedback is encouraged as we continue to refine our model.\n' 
-                'Please email rufas_dev_team@cornell.edu with your comments.\n' 
-                'Thank you for using the Dairy Farm GHG program!\n')
+            header('We hope this information was helpful to you. ' +
+                'Thank you for using the Dairy Farm GHG program!')
                 
         except FarmError as e:
             print(str(e))
